@@ -80,8 +80,8 @@ async function main() {
     }
 
     // 2) 输入用户名密码
-    const userInput = page.locator('input[name="cjmxr"]');
-    const passInput = page.locator('input[name="pp680211"]');
+    const userInput = page.locator('input[name="username"]');
+    const passInput = page.locator('input[name="password"]');
     await userInput.waitFor({ state: 'visible', timeout: 30_000 });
     await passInput.waitFor({ state: 'visible', timeout: 30_000 });
 
@@ -111,7 +111,7 @@ async function main() {
       await notifyTelegram({ ok: true, stage: '登录成功', msg: `当前 URL：${url}`, screenshotPath: spAfter });
 
       // **进入服务器详情**
-      const serverLink = page.locator('a[href="/server/5202fe13"]');
+      const serverLink = page.locator('a[href="/server/21a9525b"]');
       await serverLink.waitFor({ state: 'visible', timeout: 20_000 });
       await serverLink.click({ timeout: 10_000 });
 
@@ -121,7 +121,7 @@ async function main() {
       await notifyTelegram({ ok: true, stage: '进入服务器页面', msg: '已成功打开服务器详情', screenshotPath: spServer });
 
       // **点击 Console 菜单**
-      const consoleMenu = page.locator('a[href="/server/5202fe13"].active');
+      const consoleMenu = page.locator('a[href="/server/21a9525b"].active');
       await consoleMenu.waitFor({ state: 'visible', timeout: 15_000 });
       await consoleMenu.click({ timeout: 5_000 });
 
