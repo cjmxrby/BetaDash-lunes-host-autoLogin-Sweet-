@@ -80,8 +80,8 @@ async function main() {
     }
 
     // 2) 输入用户名密码
-    const userInput = page.locator('input[name="username"]');
-    const passInput = page.locator('input[name="password"]');
+    const userInput = page.locator('input[name="cjmxr"]');
+    const passInput = page.locator('input[name="pp680211"]');
     await userInput.waitFor({ state: 'visible', timeout: 30_000 });
     await passInput.waitFor({ state: 'visible', timeout: 30_000 });
 
